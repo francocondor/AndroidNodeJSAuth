@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bd"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <TextView
+            android:text="NODEJS AUTH"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_email"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_textColorHint="#AFAFAF"
+            app:met_baseColor="@android:color/white"
+            app:met_primaryColor="@android:color/white"
+            app:met_iconLeft="@drawable/ic_user"
+            app:met_iconPadding="0dp"
+        />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_password"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_textColorHint="#AFAFAF"
+            app:met_baseColor="@android:color/white"
+            app:met_primaryColor="@android:color/white"
+            app:met_iconLeft="@drawable/ic_lock"
+            app:met_iconPadding="0dp"
+        />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/register_button"
+                android:text="REGISTER"
+                android:textSize="18sp"
+
+                android:textColor="@android:color/white"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/login_button"
+                android:text="LOGIN"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
