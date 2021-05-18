@@ -1,5 +1,7 @@
 package com.example.androidnodejsauth.Retrofit;
 
+import com.example.androidnodejsauth.LoginResponse;
+
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -15,6 +17,6 @@ public interface INodeJS {
 
     @POST("login")
     @FormUrlEncoded
-    Observable<String> loginUser(@Field("email") String email,
-                                 @Field("password") String password);
+    Observable<LoginResponse> loginUser(@Field("email") String email,
+                                        @Field("password") String password);
 }
