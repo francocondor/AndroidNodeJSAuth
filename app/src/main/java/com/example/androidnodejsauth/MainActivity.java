@@ -56,18 +56,30 @@ public class MainActivity extends AppCompatActivity {
         compositeDisposable.add(myAPI.loginUser(email,password)
         .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<String>() {
+                .subscribe(new Consumer<LoginResponse>() {
                     @Override
-                    public void accept(String s) throws Exception {
-                        if(s.contains("encrypted_password")){
+                    public void accept(LoginResponse data) {
+
+                        /**
+                         * I'm not sure if encrypted_password is boolean. xd
+                         */
+                        if (data.encrypted_password) {
+                            Log.e("Datos1",data.id + "");
+                            Log.e("Datos2",data.name);
+                            Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, ""+data, Toast.LENGTH_SHORT).show();
+                        }
+
+/*                        if(s.contains("encrypted_password")){
                             JSONObject jsonObj = new JSONObject(s);
 
                             Log.e("Datos1",""+jsonObj.get("id"));
                             Log.e("Datos2",""+jsonObj.get("name"));
                             Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(MainActivity.this, ""+s, Toast.LENGTH_SHORT).show();
-                        }
+                            Toast.makeText(MainActivity.this, ""+data, Toast.LENGTH_SHORT).show();
+                        }*/
                     }
                 })
         );
